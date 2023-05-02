@@ -8,9 +8,7 @@ Internet retail, also known as e-commerce, is the largest sector of the electron
 I have built the back end for an e-commerce site usubg working Express.js API and configured it to use Sequelize to interact with a MySQL database.
 #
 ## Built With
-- Saiyan Pride
 - JSON:[ JSON](https://www.npmjs.com/package/json)
-- Dynamic JavaScript
 - Dotenv: [8.6.0](https://www.npmjs.com/package/dotenv)
 - Express: [4.17.1](https://www.npmjs.com/package/express)
 - Node.js: [Version 16.18.1](https://nodejs.org/en/blog/release/v16.18.1/)
@@ -19,7 +17,6 @@ I have built the back end for an e-commerce site usubg working Express.js API an
 - Sequelize: [6.29.3](https://www.npmjs.com/package/sequelize)
 - Insomnia: [by Kong](https://insomnia.rest/)
 - Nodemon: [2.0.12](https://www.npmjs.com/package/nodemon/v/2.0.12)
-- License Badge: [Shields.io](https://shields.io/)
 - Visual Studio Code: [Website](https://code.visualstudio.com/)
 
 #

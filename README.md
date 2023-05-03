@@ -26,7 +26,8 @@ I have built the back end for an e-commerce site usubg working Express.js API an
 
 #
 ## Technology Used   
-
+express cheatsheet: https://quickref.me/express
+express help info: https://expressjs.com/en/guide/routing.html
 
 
 

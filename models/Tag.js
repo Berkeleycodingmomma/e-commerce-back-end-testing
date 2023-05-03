@@ -12,7 +12,11 @@ Tag.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    
+
+    //I set the data type to string
+    tag_name: {
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,

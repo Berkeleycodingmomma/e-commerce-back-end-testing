@@ -30,7 +30,7 @@ router.get('/:id', async (req, res) => {
         model: Product
       }]
     });
-//If not found, user will recieve a 404 ststus w/msg
+    //If not found, user will recieve a 404 ststus w/msg
     if (!category) {
       res.status(404).json({
         message: 'id not found'
@@ -46,30 +46,57 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-
-
-
-router.get('/:id', (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
+//Create  a new catagory
+router.post('/', async (req, res) => {
+  try {
+    const newCategory = await Category.create(req.body);
+    res.status(200).json(newCategory);
+  } catch (err) {
+    //This takes care if the 400 ststus w/ msg
+    res.status(400).json({
+      message: 'creation failed'
+    });
+  }
 });
 
-
-
-
-router.post('/', (req, res) => {
-  // create a new category
+//Below this function updates the catagory by Id w/ matching Id
+router.put('/:id', async (req, res) => {
+  try {
+    const updated = await Category.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    });
+    //if catagory not found, send 404 status w/ msg
+    !updated[0] ? res.status(404).json({
+      message: 'id not found'
+    }) : res.status(200).json(updated);
+  }
+  //this handles the error with a 500 status w/ msg
+  catch (err) {
+    res.status(500).json({
+      message: 'update failed'
+    });
+  }
 });
 
-
-
-
-router.put('/:id', (req, res) => {
-  // update a category by its `id` value
-});
-
-router.delete('/:id', (req, res) => {
-  // delete a category by its `id` value
+//Here we are deleting catagory by Id
+router.delete('/:id', async (req, res) => {
+  try {
+    const deleted = await Category.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    //if catagory not found, send 404 status w/ msg
+    !deleted ? res.status(404).json({
+      message: 'id not found'
+    }) : res.status(200).json(deleted);
+  }
+  //this handles the error with a 500 status w/ msg
+  catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

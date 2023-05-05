@@ -7,7 +7,7 @@ Internet retail, also known as e-commerce, is the largest sector of the electron
 #
 I have built the back end for an e-commerce site using working Express.js API and configured it to use Sequelize to interact with a MySQL database. I then took the application's API routes and tested them in Insomnia Core.
 #
-## Built With/Installs
+## Built with/Installs
 #
 - JSON:[ JSON](https://www.npmjs.com/package/json)
 - Dotenv: [8.6.0](https://www.npmjs.com/package/dotenv)

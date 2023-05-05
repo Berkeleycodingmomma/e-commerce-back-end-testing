@@ -23,7 +23,7 @@ I have built the back end for an e-commerce site using working Express.js API an
 #
 ## Visual image of the application's API route being tested in Insomnia Core.
 
-<img width="1170" alt="Screen Shot 2023-04-24 at 11 47 38 PM" src="https://user-images.githubusercontent.com/127444682/234191717-7177896d-95ca-472b-b6aa-ef11d6410ef6.png">
+<img width="1440" alt="Screen Shot 2023-05-04 at 11 44 34 PM" src="https://user-images.githubusercontent.com/127444682/236385536-39e4df25-3f1a-426b-9416-98f0f607b497.png">
 
 #
 ## Technology Used   

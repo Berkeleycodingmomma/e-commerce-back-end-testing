@@ -28,7 +28,8 @@ I have built the back end for an e-commerce site usubg working Express.js API an
 ## Technology Used   
 express cheatsheet: https://quickref.me/express
 express help info: https://expressjs.com/en/guide/routing.html
-
+mysql cheat sheet: https://quickref.me/mysql
+sequelize docs: https://sequelize.org/docs/v6/core-concepts/model-basics/
 
 
 #
@@ -40,7 +41,7 @@ express help info: https://expressjs.com/en/guide/routing.html
 ## Youtube link to a walk-through demonstrating how to test E-commerce Back End
 #
 
-* [Youtube-demo-link]()
+* [Youtube-demo-link](https://youtu.be/e76CAdNI7Sw)
 
 #
 
@@ -97,32 +98,80 @@ module.exports = router;
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ```sh
-    
 
+router.post("/", (req, res) => {
+  Product.create(req.body)
+    .then((product) => {
+      if (req.body.tagIds.length) {
+        const productTagIds = req.body.tagIds.map((tag_id) => {
+          return {
 
+            product_id: product.id,
+            tag_id,
+          };
+        });
+        return ProductTag.bulkCreate(productTagIds);
+      }
+      res.status(200).json(product);
+    })
+    .then((productTagIds) => res.status(200).json(productTagIds))
+    .catch((err) => {
+      res.status(400).json({
+        message: "Creation failed",
+        error: err
+      });
+    });
+});
  
 ```
 
-**(ABOVE)- 
+**(ABOVE)- Below we can create a new product w/ this function
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ```sh
 
+router.put("/:id", async (req, res) => {
+  try {
+    const updated = await Tag.update(req.body, {
+      where: { id: req.params.id },
+    });
+    !updated[0]
+      ? res.status(404).json({ message: "No tag found with this id!" })
+      : res.status(200).json(updated);
+  } catch (err) {
+    res.status(500).json({ message: "Tag update failed" });
+  }
+});
 
     
 ```
 
-**(ABOVE)- 
+**(ABOVE)- Here we are asking to update a tag by ID
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ```sh
   
+  
+    tag_name: {
+      type: DataTypes.STRING,
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'tag',
+  }
+);
+
+module.exports = Tag;
 
 
 ```
-**(ABOVE)- 
+**(ABOVE)- Setting the data type to string
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 

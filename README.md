@@ -27,10 +27,11 @@ I have built the back end for an e-commerce site using working Express.js API an
 
 #
 ## Technology Used   
-express cheatsheet: https://quickref.me/express
-express help info: https://expressjs.com/en/guide/routing.html
-mysql cheat sheet: https://quickref.me/mysql
-sequelize docs: https://sequelize.org/docs/v6/core-concepts/model-basics/
+#
+- express cheatsheet: https://quickref.me/express
+- express help info: https://expressjs.com/en/guide/routing.html
+- mysql cheat sheet: https://quickref.me/mysql
+- sequelize docs: https://sequelize.org/docs/v6/core-concepts/model-basics/
 
 #
 

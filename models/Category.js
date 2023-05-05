@@ -14,7 +14,7 @@ Category.init({
     autoIncrement: true,
   },
   //defining the  catagory_name column
-  catagory_name: {
+  category_name: {
     type: DataTypes.STRING,
   },
 }, {
